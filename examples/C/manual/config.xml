@@ -12,7 +12,7 @@
          Then change the method for MPI only and rerun those examples.
          Use only the MPI method for the 4_adios_nfiles example.
     -->
-    <method group="temperature" method="MPI"/>
+    <method group="temperature" method="POSIX_SCR"/>
     <!--method group="temperature" method="MPI"/-->
 
     <buffer max-size-MB="1"/>

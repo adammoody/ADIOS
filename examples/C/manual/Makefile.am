@@ -6,7 +6,7 @@ AUTOMAKE_OPTIONS = no-dependencies
 all-local:
 	test "$(srcdir)" = "$(builddir)" || cp $(srcdir)/*.xml $(builddir)
 
-noinst_PROGRAMS = 1_nonadios_example 2_adios_write 3_adios_read 4_adios_nfiles
+noinst_PROGRAMS = 1_nonadios_example 2_adios_write 3_adios_read 4_adios_nfiles scr_adios_write scr_adios_read
 
 1_nonadios_example_SOURCES = 1_nonadios_example.c
 1_nonadios_example_LDADD = $(top_builddir)/src/libadios.a 
@@ -24,6 +24,15 @@ noinst_PROGRAMS = 1_nonadios_example 2_adios_write 3_adios_read 4_adios_nfiles
 4_adios_nfiles_LDADD = $(top_builddir)/src/libadios.a 
 4_adios_nfiles_LDFLAGS = $(ADIOSLIB_LDFLAGS) $(ADIOSLIB_EXTRA_LDFLAGS)
 4_adios_nfiles_LDADD += $(ADIOSLIB_LDADD)
+scr_adios_write_CFLAGS = $(AM_CPPFLAGS) $(ADIOSLIB_CFLAGS) $(ADIOSLIB_EXTRA_CFLAGS)
+scr_adios_write_CPPFLAGS = $(AM_CPPFLAGS) $(ADIOSLIB_CPPFLAGS) $(ADIOSLIB_EXTRA_CPPFLAGS)
+scr_adios_write_LDADD = $(top_builddir)/src/libadios.a 
+scr_adios_write_LDFLAGS = $(ADIOSLIB_LDFLAGS) $(ADIOSLIB_EXTRA_LDFLAGS)
+scr_adios_write_LDADD += $(ADIOSLIB_LDADD)
+scr_adios_read_CPPFLAGS = $(AM_CPPFLAGS) $(ADIOSLIB_CPPFLAGS) $(ADIOSLIB_EXTRA_CPPFLAGS)
+scr_adios_read_LDADD = $(top_builddir)/src/libadios.a 
+scr_adios_read_LDFLAGS = $(ADIOSLIB_LDFLAGS) $(ADIOSLIB_EXTRA_LDFLAGS)
+scr_adios_read_LDADD += $(ADIOSLIB_LDADD)
 
 CLEANFILES = *.bp
 CC=$(MPICC)

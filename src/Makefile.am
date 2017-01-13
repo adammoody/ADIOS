@@ -208,12 +208,13 @@ CLibSources =           core/adios.c \
                         read/read_bp.c \
                         read/read_bp_staged.c \
                         read/read_bp_staged1.c \
-                        write/adios_posix.c 
+                        write/adios_posix.c
 
 CLibParallelSources =   write/adios_mpi.c \
                         write/adios_mpi_lustre.c \
                         write/adios_mpi_amr.c \
-                        write/adios_var_merge.c 
+                        write/adios_var_merge.c \
+                        write/adios_posix_scr.c 
 
 CLibSEQSources =        core/mpidummy.c
 
@@ -238,7 +239,8 @@ FortranLibSources =     core/adiosf.c \
 FortranLibParallelSources =  write/adios_mpi.c \
                         write/adios_mpi_lustre.c \
                         write/adios_mpi_amr.c \
-                        write/adios_var_merge.c
+                        write/adios_var_merge.c \
+                        write/adios_posix_scr.c 
 
 FortranLibSEQSources =  core/mpidummy.c
 
